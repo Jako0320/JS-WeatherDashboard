@@ -3,41 +3,49 @@ body {
     margin: 0;
     padding: 0;
   }
-  
+
+  /*Style for title with the search button*/
   header {
     background-color: #f5f5f5;
     padding: 20px;
     text-align: center;
   }
-  
+
+  /*Style for the search form */
   form {
     margin-bottom: 20px;
   }
-  
+
+  /*Style for the text in the form*/
   input[type="text"] {
     padding: 5px;
   }
-  
+
+  /*Search button style*/
   button {
     padding: 5px 10px;
   }
-  
+
+  /*Basic formatting for the main section that will contain the fetch data*/
   main {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
   }
-  
+
+  /*Style for the fetched data*/
   #current-weather,
   #forecast {
     margin-bottom: 20px;
   }
-  
+
+  /*Style for the search history*/  
   #search-history {
     display: flex;
     flex-wrap: wrap;
   }
   
+  /*Style for the search history data*/
   .city-card {
     width: 150px;
     background-color: #f5f5f5;
