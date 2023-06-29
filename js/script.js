@@ -1,6 +1,8 @@
 const searchForm = document.getElementById('search-form');
 const cityInput = document.getElementById('city-input');
 const apiKey = '57d4ee159d4b8fa8ae8bb055910cc28c';
+const currentWeatherSection = document.getElementById('current-weather');
+const forecastSection = document.getElementById('forecast');
 
 
   // Event listener for the search form submission
@@ -41,4 +43,50 @@ async function getWeatherData(city) {
       console.error(error);
       alert('An error occurred while fetching forecast data');
     }
+  }
+
+  // Display current weather
+function displayCurrentWeather(data) {
+    currentWeatherSection.innerHTML = `
+      <h2>${data.name} (${new Date().toLocaleDateString()})</h2>
+      <div>
+        <img src="http://openweathermap.org/img/w/${data.weather[0].icon}.png" alt="${data.weather[0].description}">
+        <p>Temperature: ${data.main.temp} °C</p>
+        <p>Humidity: ${data.main.humidity} %</p>
+        <p>Wind Speed: ${data.wind.speed} m/s</p>
+      </div>
+    `;
+  }
+  
+  // Display forecast
+  function displayForecast(data) {
+    forecastSection.innerHTML = '';
+    for (let i = 0; i < data.list.length; i += 8) {
+      const forecast = data.list[i];
+      const forecastDate = new Date(forecast.dt_txt).toLocaleDateString();
+      const forecastIcon = forecast.weather[0].icon;
+      const forecastTemp = forecast.main.temp;
+      const forecastWindSpeed = forecast.wind.speed;
+      const forecastHumidity = forecast.main.humidity;
+  
+      const forecastCard = document.createElement('div');
+      forecastCard.classList.add('forecast-card');
+      forecastCard.innerHTML = `
+        <h3>${forecastDate}</h3>
+        <img src="http://openweathermap.org/img/w/${forecastIcon}.png" alt="${forecast.weather[0].description}">
+        <p>Temperature: ${forecastTemp} °C</p>
+        <p>Humidity: ${forecastHumidity} %</p>
+        <p>Wind Speed: ${forecastWindSpeed} m/s</p>
+      `;
+      forecastSection.appendChild(forecastCard);
+    }
+  }
+
+  // Search for city weather
+async function searchCity(city) {
+    const weatherData = await getWeatherData(city);
+    const forecastData = await getForecastData(city);
+  
+    displayCurrentWeather(weatherData);
+    displayForecast(forecastData);
   }
