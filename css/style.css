@@ -4,10 +4,11 @@ body {
     padding: 0;
   }
 
-  /*Style for title with the search button*/
+  /*Style for title */
   header {
-    background-color: #f5f5f5;
+    background-color: #b37575;
     padding: 20px;
+    width: 100%;
     text-align: center;
   }
 
@@ -30,6 +31,7 @@ body {
   main {
     display: flex;
     flex-direction: row;
+    width: 100%;
   }
 
   /* Aside section style */
@@ -45,16 +47,15 @@ body {
   }
   
   /*Style for the current weather part*/
-  #current-weather {
-    background-color: #f5f5f5;
-    padding: 20px;
-    text-align: center;
-    margin-bottom: 20px;
-    width: 1000px; 
-  }
+ #current-weather {
+  background-color: #f5f5f5;
+  padding: 20px;
+  text-align: left;
+  margin-bottom: 20px;
+}
   /* Title style for forecast section */
   h2 {
-    text-align: center;
+    text-align: left;
      margin-top: 0;
    }
  
