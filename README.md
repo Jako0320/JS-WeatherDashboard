@@ -18,6 +18,7 @@ NA
 
 ## Usage
 [Github repo](https://github.com/Jako0320/JS-WeatherDashboard)
+[Live Website](https://jako0320.github.io/JS-WeatherDashboard/)
 
 ## License
 
