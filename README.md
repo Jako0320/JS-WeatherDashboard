@@ -17,8 +17,9 @@ undefined
 NA
 
 ## Usage
-[Github repo](https://github.com/Jako0320/JS-WeatherDashboard)
-[Live Website](https://jako0320.github.io/JS-WeatherDashboard/)
+[Github repo](https://github.com/Jako0320/JS-WeatherDashboard)  
+[Live Website](https://jako0320.github.io/JS-WeatherDashboard/)  
+![App Screenshot](./assets/images/Screenshot.png)
 
 ## License
 
