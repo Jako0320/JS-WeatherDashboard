@@ -99,6 +99,7 @@ async function searchCity(city) {
   if (!searchHistory.includes(city)) {
     searchHistory.push(city);
     displaySearchHistory();
+    saveSearchHistory();
   }
 }
 
